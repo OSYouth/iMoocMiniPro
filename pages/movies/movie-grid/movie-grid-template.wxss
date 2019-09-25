@@ -1,0 +1,13 @@
+@import  "../movie/movie-template.wxss";
+
+/*flex弹性盒子模型对于scroll-view无效*/
+.single-view-container{
+  float: left;
+  margin-bottom: 40rpx;
+}
+
+.grid-container{
+  height:1300rpx;   /*这个高度一定要设置，不然more-movie.js的onScrollLower函数会失效*/
+  margin: 40rpx 0 40rpx 6rpx;
+}
+

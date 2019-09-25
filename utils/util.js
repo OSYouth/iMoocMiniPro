@@ -10,7 +10,24 @@ function convertToStarArray(stars){
   }
   return array;
 }
+//源自movies.js中的getMovieListData， 必须要加一个回调函数
+function http (url, callBack) {
+  wx.request({
+    url: url,
+    method: 'GET',
+    header: {
+      "Content-Type": ""
+    },
+    success: function (res) {
+      callBack(res.data)
+    },
+    fail: function () {
+      console.log(error);
+    }
+  })
+}
 
 module.exports = {
-  convertToStarArray: convertToStarArray
+  convertToStarArray: convertToStarArray,
+  http: http
 }
